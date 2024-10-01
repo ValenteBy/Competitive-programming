@@ -10,6 +10,15 @@
 using namespace std;
 
 signed main(){ _
+    int n; cin >> n;
+
+    while(n--){
+        int a, b;
+        cin >> a >> b;
+        int men = min(a,b);
+        int maior = max(a,b);
+        cout << maior - men << endl;
+    }
     
     return 0;
 }

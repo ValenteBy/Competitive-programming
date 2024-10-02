@@ -4,7 +4,7 @@
 #define in insert
 #define llv vector<ll>
 #define int ll
-#define DEBUG cout << "DEBUG";
+#define DEBUG(x) cout << "Debug: " <<  x << endl;
 #define _ ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 using namespace std;
@@ -23,31 +23,46 @@ signed main(){ _
         int D, L, R, C; cin >> D >> L >> R >> C;
         if(D == 0){// deitado
             int x = R - 1;
-            int y = C + L - 2;
-            
-            int maiorLado = max(x,y); 
-           
-            if(maiorLado == x){
-                for(int i = y; i >= 0; i--){    
-                    mar[x][i]++;
-                    if(mar[x][i] > 0){
-                        tf = false;
-                    }
-                }
+            int y = C - 1;
+
+            if(y + L - 1 > 9){
+                tf = false;
+                break;
             }
-            else{
-                for(int i = y; i < 10; i++){
-                    mar[x][i]++;
-                    if(mar[x][i] > 0){
-                        tf = false;
-                    }
+              
+            for(int i = y; i < y + L; i++){
+                mar[x][i]++;
+                //DEBUG(mar[x][i]);
+                if(mar[x][i] > 1){
+                    tf = false;
                 }
-            }
+           }                
         }
-        if(D == 1){
+
+        else if(D == 1){
             int x = R - 1;
-            int y = C + L - 2;
+            int y = C - 1;
+
+            if(x + L - 1 > 9){
+                tf = false;
+                break;          
+            }
+
+            for(int i = x; i < x + L; i++){
+                mar[i][y]++;
+                //DEBUG(mar[i][y]);
+                if(mar[i][y] > 1){
+                    tf = false;
+                }
+            }
+            //else if(){} 
         }
+    }
+
+    if(tf){
+        cout << "Y";
+    }else{
+        cout << "N";
     }
 
     return 0;

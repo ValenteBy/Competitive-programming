@@ -24,7 +24,7 @@ signed main(){ _
             if(letras[i] == 'B' && letras[i + 1] == 'G')
             {
                 swap(letras[i], letras[i + 1]);
-                i++; // Pular para o próximo par
+                i++;
             }
         }
         t--;

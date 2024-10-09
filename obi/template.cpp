@@ -5,21 +5,16 @@
 #define llv vector<ll>
 #define int ll
 #define DEBUG cout << "DEBUG";
+#define DEBUG(x) cout << x << endl;
 #define _ ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 using namespace std;
 
 signed main(){ _
     
-    int n, alt; cin >> n >> alt;
-    int cont = 0;
+    int n;
 
-    for(int i = 0; i < n; i++){
-        int x; cin >> x;
-        if(x <= alt){
-            cont++;
-        }
-    } 
-    cout << cont;
+    cout << __builtin_popcount(n);
+
     return 0;
 }

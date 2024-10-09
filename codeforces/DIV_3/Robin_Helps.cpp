@@ -24,18 +24,11 @@ signed main(){ _
             else if(x == 0 && totalOuro > 0){
                 totalDeZeros++;
                 totalOuro--;
-                //DEBUG(i);
             }
         }
 
-        cout << "ans: "<<totalDeZeros << endl;
+        cout << totalDeZeros << endl;
 
-        // if(totalDeZeros >= totalOuro){
-        //     cout << totalOuro << endl;
-        // }
-        // else{
-        //     cout << totalDeZeros << endl;
-        // } 
     }
 
     return 0;

@@ -21,10 +21,10 @@ signed main(){ _
 
     while(n--){
         int D, L, R, C; cin >> D >> L >> R >> C;
+        int x = R - 1;
+        int y = C - 1;
+        
         if(D == 0){// deitado
-            int x = R - 1;
-            int y = C - 1;
-
             if(y + L - 1 > 9){
                 tf = false;
                 break;
@@ -32,17 +32,13 @@ signed main(){ _
               
             for(int i = y; i < y + L; i++){
                 mar[x][i]++;
-                //DEBUG(mar[x][i]);
                 if(mar[x][i] > 1){
                     tf = false;
                 }
-           }                
+            }                
         }
 
         else if(D == 1){
-            int x = R - 1;
-            int y = C - 1;
-
             if(x + L - 1 > 9){
                 tf = false;
                 break;          
@@ -50,12 +46,10 @@ signed main(){ _
 
             for(int i = x; i < x + L; i++){
                 mar[i][y]++;
-                //DEBUG(mar[i][y]);
                 if(mar[i][y] > 1){
                     tf = false;
                 }
             }
-            //else if(){} 
         }
     }
 

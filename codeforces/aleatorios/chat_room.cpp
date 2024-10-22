@@ -15,15 +15,6 @@ signed main(){ _
     string str; cin >> str;
     bool vetor[5] = {0};
 
-    // h e l l o
-    // h l e l o
-    // int h=0, e=0, l1=0, l2=0, o=0;
-
-    // for(int i = 0; i < str.size(); i++){
-    //     if(str[i])
-    // }
-
-
     for(int i = 0; i < str.size(); i++){
         if(str[i] == 'h' && vetor[0] == 0 && vetor[1] == 0){
             vetor[0] = true;

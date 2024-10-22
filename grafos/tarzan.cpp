@@ -5,23 +5,22 @@
 #define llv vector<ll>
 #define int ll
 #define DEBUG cout << "DEBUG";
-#define DEBUG(x) cout << x << endl;
+#define PRINT(x) cout << x << endl;
 #define MAXN 50050
 #define _ ios_base::sync_with_stdio(false); cin.tie(NULL);
 
 using namespace std;
 
 int componentes[MAXN];
-llv listas[MAXN];
-int n, d;
+llv lista[MAXN];
+int cont = 0;
 
-void dfs(int x){
-
-    for(int i = 0; i < (int)listas[x].size(); i++){
-        int v = listas[x][i];
-
-        if(componentes[x] == -1){
+dfs(int x){
+    for(int i = 0; i < (int)lista[x].size(); i++){
+        int v = lista[x][i];
+        if(componentes[v] == 0){
             componentes[v] = componentes[x];
+            //PRINT(v);
             dfs(v);
         }
     }
@@ -29,38 +28,27 @@ void dfs(int x){
 
 signed main(){ _
     
-    cin >> n >> d;
+    int n, d; cin >> n >> d;
 
-    for(int i = 1; i <= n; i++){
-        componentes[i] = -1;
-    }
-
-    int comp = 0;
-    for(int i = 1; i <= n; i++){
-        int a,b; cin >> a >> b;
-        int menor = min(a,b);
-        int maior = max(a,b);
-        if(a != b){
-            listas[a].pb(b);
-            listas[b].pb(a);
-            if(maior - menor > d){
-                cout << "N";
-                return 0;
-            }
+    for(int i = 0; i < n; i++){
+        int x, y; cin >> x >> y;
+        if(abs(x - y) <= d){
+            lista[x].pb(y);
+            lista[y].pb(x);
         }
     }
 
     for(int i = 1; i <= n; i++){
-        if(componentes[i] == -1){
-            comp++;
-            componentes[i] = comp;
-            dfs(1);
+        if(componentes[i] == 0){
+            cont++;
+            componentes[i] = cont;
+            dfs(i);
         }
     }
-    DEBUG(comp);
-    if(comp==1)
+    PRINT(cont);
+    if(cont){
         cout << "S";
-    else
+    }else
         cout << "N";
 
     return 0;

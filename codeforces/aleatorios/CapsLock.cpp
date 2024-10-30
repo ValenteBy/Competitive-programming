@@ -14,6 +14,8 @@ signed main(){ _
     
     string str; cin >> str;
 
+    
+
     for(int i = 0; i < str.size(); i++){
         if(i == 0){
             str[i] = toupper(str[i]);

@@ -11,14 +11,14 @@
 
 using namespace std;
 
-int componentes[MAXN];
+int componentes[MAXN] = {-1};
 llv lista[MAXN];
 int cont = 0;
 
-dfs(int x){
+void dfs(int x){
     for(int i = 0; i < (int)lista[x].size(); i++){
         int v = lista[x][i];
-        if(componentes[v] == 0){
+        if(componentes[v] == -1){
             componentes[v] = componentes[x];
             //PRINT(v);
             dfs(v);
@@ -39,7 +39,7 @@ signed main(){ _
     }
 
     for(int i = 1; i <= n; i++){
-        if(componentes[i] == 0){
+        if(componentes[i] == -1){
             cont++;
             componentes[i] = cont;
             dfs(i);

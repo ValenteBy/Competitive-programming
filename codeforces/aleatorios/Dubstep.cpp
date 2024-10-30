@@ -20,18 +20,15 @@ signed main(){ _
             i += 2;
             if(cont == true and tf == false){
                 cout << " ";
-                //strnew[i]+=' ';
                 tf = true;
             }
         }
         else{
             cout << str[i];
-            //strnew += str[i];
             cont = true;
             tf = false;
         }
     }
-    //WUB WE WUB ARE WUB WUB THE WUB CHAMPIONS WUB MY WUB FRIEND WUB
 
     return 0;
 }

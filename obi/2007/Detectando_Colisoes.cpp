@@ -11,16 +11,11 @@
 using namespace std;
 
 signed main(){ _
-    
-    int t;
-    cin >> t;
 
-    while(t--)
-    {
-        set<int> h, a;
-
-        for(int)
-    }
+    int matriz1[4];    
+    int matriz2[4];
     
+    
+
     return 0;
 }
